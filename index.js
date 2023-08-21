@@ -7,11 +7,15 @@ const app = express();
 
 const Item= require("./db")
 require("./config")
-const redis = new Redis({
-    host: '127.0.0.1', // Replace with your Redis server's IP address
-  port: 6379,
-});
-
+// const redis = new Redis({
+//     host: 'redis://red-cjhgavr6fquc73bpdf4g', // Redis server's IP address
+//   port: 6379,
+//   tls: {
+//     // If using TLS/SSL
+//     rejectUnauthorized: false, // Make sure to use proper verification
+//   },
+// });
+const redis = new Redis('rediss://red-cjhgavr6fquc73bpdf4g:HMEWicbfLH9qeOpEMo2sSdq5i1mBQibh@oregon-redis.render.com:6379');
 
 
 app.use(bodyParser.json());
